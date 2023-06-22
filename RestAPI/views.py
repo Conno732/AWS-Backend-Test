@@ -4,12 +4,10 @@ from .models import ChatMessage
 from django.template import loader
 from django.http import HttpResponseNotFound
 from django.views.decorators.csrf import csrf_exempt
-
+import platform
 def index(request):
-    chat_log = ChatMessage.objects.values("msg")
-    response = "<br>".join([m["msg"] for m in chat_log])
-    #giigigi
-    return HttpResponse(response, status=200)
+
+    return HttpResponse(platform.uname(), status=200)
 
 @csrf_exempt
 def sendMsg(request):
