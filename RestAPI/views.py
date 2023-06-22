@@ -9,7 +9,7 @@ def index(request):
     chat_log = ChatMessage.objects.all()
     
     response = "<br>".join([m.msg for m in chat_log])
-    return HttpResponse(response)
+    return HttpResponse(response, status=200)
 
 @csrf_exempt
 def sendMsg(request):
