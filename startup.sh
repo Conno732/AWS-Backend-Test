@@ -7,7 +7,7 @@ sudo mkdir sampleapp
 cd sampleapp
 sudo virtualenv env
 source env/bin/activate
-sudo env/bin/pip install django
+sudo pip install django
 sudo git clone https://github.com/Conno732/AWS-Backend-Test.git
 cd AWS-Backend-Test/
 sudo python3 manage.py makemigrations
