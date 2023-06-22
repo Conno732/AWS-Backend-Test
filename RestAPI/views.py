@@ -6,9 +6,9 @@ from django.http import HttpResponseNotFound
 from django.views.decorators.csrf import csrf_exempt
 
 def index(request):
-    chat_log = ChatMessage.objects.all()
+    chat_log = ChatMessage.objects.all(pk=10)
     
-    #response = "<br>".join([m.msg for m in chat_log])
+    response = "<br>".join([m.msg for m in chat_log])
     return HttpResponse("hhhooo", status=200)
 
 @csrf_exempt
