@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 def index(request):
     chat_log = ChatMessage.objects.all()
-    template = loader.get_template("/var/www/sampleapp/AWS-Backend-Test/RestAPI/Templates/index.html")
+    template = loader.get_template("index.html")
     context = {
         "output" : chat_log,
     }
