@@ -8,8 +8,8 @@ from django.views.decorators.csrf import csrf_exempt
 def index(request):
     chat_log = ChatMessage.objects.all()
     
-    response = "<br>".join([m.msg for m in chat_log])
-    return HttpResponse(response, status=200)
+    #response = "<br>".join([m.msg for m in chat_log])
+    return HttpResponse("Hi", status=200)
 
 @csrf_exempt
 def sendMsg(request):
